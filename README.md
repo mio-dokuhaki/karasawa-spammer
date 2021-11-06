@@ -7,10 +7,12 @@
 3. 
 以下の条件で絞り込みをします:
 
-プロトコル: HTTPS
-タイプ: AnonymousかAllKinds
-応答速度: 5秒以内
-国: All Countries
-img(src="https://i.imgur.com/JnUARlY.png")
+- プロトコル: HTTPS
+- タイプ: AnonymousかAllKinds
+- 応答速度: 5秒以内
+- 国: All Countries
+
+![aa](https://i.imgur.com/JnUARlY.png)
+
 
 4. コピーしてProxies.txtに追記すれば完了
