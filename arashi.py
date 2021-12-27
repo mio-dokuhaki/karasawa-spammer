@@ -31,10 +31,12 @@ bbs = [
 ]
 l = []
 
+ua = open('ua.txt').readlines()
+
 def fetchPosts ():
     for i in bbs:
         res = requests.get(f"{i['origin']}/{i['bbs']}/subback.html", headers={
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
+            "User-Agent": random.choice(ua)
         }).text
         pattern = "https?://[\w/:%#\$&\?\(\)~\.=\+\-]+"
         url_list = re.findall(pattern, res)
@@ -100,7 +102,7 @@ def main(proxyStr):
                 "http": "https://"+proxyStr,
                 "https": "https://"+proxyStr
     }, headers={
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
+    "User-Agent": random.choice(ua)
     })
     response.encoding = response.apparent_encoding
     html = response.text
@@ -110,7 +112,7 @@ def main(proxyStr):
                 "http": "https://"+proxyStr,
                 "https": "https://"+proxyStr
     },headers={
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
+    "User-Agent": random.choice(ua)
     })
     response.encoding = response.apparent_encoding
     html = response.text
